@@ -1,0 +1,83 @@
+{
+    "data": {
+        "columns": [
+            {
+                "title": "姓名",
+                "dataIndex": "name",
+                "key": "name"
+            },
+            {
+                "title": "年龄",
+                "dataIndex": "age",
+                "key": "age"
+            },
+            {
+                "title": "住址",
+                "dataIndex": "address",
+                "key": "address"
+            },
+            {
+                "title": "家庭地址",
+                "dataIndex": "address",
+                "key": "address"
+            },
+            {
+                "title": "游戏",
+                "dataIndex": "age",
+                "key": "age"
+            },
+            {
+                "title": "爱好",
+                "dataIndex": "address",
+                "key": "address"
+            },
+            {
+                "title": "vip",
+                "dataIndex": "address",
+                "key": "address"
+            }
+        ],
+        "formData": [
+            {
+                "key": "name",
+                "label": "姓名",
+                "type": {
+                    "key": "input",
+                    "config": {}
+                }
+            },
+            {
+                "key": "name1",
+                "label": "姓名1",
+                "type": {
+                    "key": "input",
+                    "config": {}
+                }
+            },
+            {
+                "key": "name2",
+                "label": "姓名2",
+                "type": {
+                    "key": "input",
+                    "config": {}
+                }
+            },
+            {
+                "key": "name2",
+                "label": "姓名3",
+                "type": {
+                    "key": "input",
+                    "config": {}
+                }
+            },
+            {
+                "key": "name2",
+                "label": "姓名4",
+                "type": {
+                    "key": "input",
+                    "config": {}
+                }
+            }
+        ]
+    }
+}

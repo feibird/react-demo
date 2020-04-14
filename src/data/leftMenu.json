@@ -1,0 +1,74 @@
+[
+    {
+        "key": "menu1",
+        "icontype": "user",
+        "title": "客户列表",
+        "url": "/party-a",
+        "children": [
+            {
+                "title": "甲方客户",
+                "url": "/party-a",
+                "key": 1
+            },
+            {
+                "title": "乙方客户",
+                "url": "/party-b",
+                "key": 2
+            },
+            {
+                "title": "录入客户",
+                "url": "/party/add",
+                "key": 3
+            }
+        ]
+    },
+    {
+        "key": "menu2",
+        "icontype": "shop",
+        "title": "商品管理",
+        "children": [
+            {
+                "title": "以上架管理",
+                "url": "/commodity/list/scuess",
+                "key": 4
+            },
+            {
+                "title": "未上架管理",
+                "url": "",
+                "key": 5
+            },
+            {
+                "title": "审核管理",
+                "url": "",
+                "key": 6
+            },
+            {
+                "title": "录入商品",
+                "url": "/commodity/add",
+                "key": 7
+            }
+        ]
+    },
+    {
+        "key": "menu3",
+        "icontype": "setting",
+        "title": "管理设置",
+        "children": [
+            {
+                "title": "权限设置",
+                "url": "/jia",
+                "key": 7
+            },
+            {
+                "title": "菜单选项",
+                "url": "/yi",
+                "key": 8
+            },
+            {
+                "title": "附件工具",
+                "url": "",
+                "key": 9
+            }
+        ]
+    }
+]
