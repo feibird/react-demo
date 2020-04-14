@@ -18,23 +18,23 @@
             },
             {
                 "title": "家庭地址",
-                "dataIndex": "address",
-                "key": "address"
+                "dataIndex": "address1",
+                "key": "address1"
             },
             {
                 "title": "游戏",
-                "dataIndex": "age",
-                "key": "age"
+                "dataIndex": "game",
+                "key": "game"
             },
             {
                 "title": "爱好",
-                "dataIndex": "address",
-                "key": "address"
+                "dataIndex": "like",
+                "key": "like"
             },
             {
                 "title": "vip",
-                "dataIndex": "address",
-                "key": "address"
+                "dataIndex": "vip",
+                "key": "vip"
             }
         ],
         "formData": [

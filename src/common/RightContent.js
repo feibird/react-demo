@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { getMenu } from "../store/actions/menuAction";
 import PartyB from "../page/user/PartyB";
 import PartyA from "../page/user/PartyA";
+import AddParty from "../page/user/AddParty";
 
 class RightContent extends Component {
   constructor() {
@@ -13,8 +14,12 @@ class RightContent extends Component {
   render() {
     return (
       <div className="right-content">
-        <Route path="/party-b" component={PartyB} />
-        <Route path="/party-a" component={PartyA} />
+        <Switch>
+          <Route path="/user/" component={PartyA} />
+          <Route path="/user/party-b" component={PartyB} />
+          <Route path="/user/party-a" component={AddParty} />
+          <Route path="/user/add-party" component={AddParty} />
+        </Switch>
       </div>
     );
   }
@@ -22,17 +27,14 @@ class RightContent extends Component {
 
 function mapStateToProps(state) {
   return {
-    menu: state.menuReducers.menu
+    menu: state.menuReducers.menu,
   };
 }
 
 function mapActionToProps(dispatch) {
   return {
-    getMenu: () => dispatch(getMenu())
+    getMenu: () => dispatch(getMenu()),
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapActionToProps
-)(RightContent);
+export default connect(mapStateToProps, mapActionToProps)(RightContent);

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ListPage from "../common/ListPage";
+import PartyA from "./PartyA";
 
-class PartyB extends Component {}
+class PartyB extends PartyA {}
 
 export default PartyB;

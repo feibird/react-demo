@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 import { Menu, Icon, Dropdown, Button } from "antd";
+import {
+  Switch,
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  NavLink,
+  Link,
+} from "react-router-dom";
 import logoUrl from "../images/logo.png";
 import "../css/common.less";
 import { getJson } from "../Service/jsonService";
@@ -24,7 +32,7 @@ export default class Header extends Component {
               return (
                 <Menu.Item key={key}>
                   <Icon type={item.icon} />
-                  {item.name}
+                  <Link className='topMenu' to={item.url}>{item.name}</Link>
                 </Menu.Item>
               );
             })}

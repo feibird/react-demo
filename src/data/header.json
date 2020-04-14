@@ -3,11 +3,13 @@
         {
             "name": "房源列表",
             "icon": "home",
+            "url":"/user/party-a",
             "key": "100000001"
         },
         {
             "name": "客源列表",
             "icon": "user",
+            "url":"/user",
             "key": "100000002"
         }
     ],

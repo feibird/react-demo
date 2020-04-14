@@ -7,17 +7,17 @@
         "children": [
             {
                 "title": "甲方客户",
-                "url": "/party-a",
+                "url": "/user/party-a",
                 "key": 1
             },
             {
                 "title": "乙方客户",
-                "url": "/party-b",
+                "url": "/user/party-b",
                 "key": 2
             },
             {
                 "title": "录入客户",
-                "url": "/party/add",
+                "url": "/user/add-party",
                 "key": 3
             }
         ]
