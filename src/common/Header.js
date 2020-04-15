@@ -10,17 +10,32 @@ import {
 } from "react-router-dom";
 import logoUrl from "../images/logo.png";
 import "../css/common.less";
-import { getJson } from "../Service/jsonService";
+import { getJson } from "../util/jsonService";
+import { http } from "../util/httpService";
 const { SubMenu } = Menu;
 
 export default class Header extends Component {
   constructor() {
     super();
+    this.state = {
+      topMenu: [],
+    };
   }
+
+  componentDidMount() {
+    this.getMenu();
+  }
+
+  getMenu = () => {
+    http("/menu/top").then((res) => {
+      console.log(res);
+      this.setState({ topMenu: res.data.data });
+    });
+  };
 
   render() {
     const data = getJson("header");
-    console.log(data);
+    const { topMenu } = this.state;
     return (
       <header className={"App-header"}>
         <div className="header-logo">
@@ -28,11 +43,13 @@ export default class Header extends Component {
         </div>
         <div className="header-menu">
           <Menu theme="dark" onClick={this.handleClick} mode="horizontal">
-            {data.topMenu.map((item, key) => {
+            {topMenu.map((item, key) => {
               return (
                 <Menu.Item key={key}>
                   <Icon type={item.icon} />
-                  <Link className='topMenu' to={item.url}>{item.name}</Link>
+                  <Link className="topMenu" to={item.url}>
+                    {item.title}
+                  </Link>
                 </Menu.Item>
               );
             })}

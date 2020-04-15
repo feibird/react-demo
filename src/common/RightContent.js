@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { getMenu } from "../store/actions/menuAction";
 import PartyB from "../page/user/PartyB";
 import PartyA from "../page/user/PartyA";
 import AddParty from "../page/user/AddParty";
@@ -25,16 +23,4 @@ class RightContent extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    menu: state.menuReducers.menu,
-  };
-}
-
-function mapActionToProps(dispatch) {
-  return {
-    getMenu: () => dispatch(getMenu()),
-  };
-}
-
-export default connect(mapStateToProps, mapActionToProps)(RightContent);
+export default RightContent;
