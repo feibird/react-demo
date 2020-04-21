@@ -12,6 +12,11 @@ import logoUrl from "../images/logo.png";
 import "../css/common.less";
 import { getJson } from "../util/jsonService";
 import { http } from "../util/httpService";
+import {
+  changeState,
+  useGlobalStore,
+  getGlobalStates
+} from "@masx200/react-simple-global-state-store-hook";
 const { SubMenu } = Menu;
 
 export default class Header extends Component {
@@ -26,15 +31,23 @@ export default class Header extends Component {
     this.getMenu();
   }
 
+  handleClick = (e) => {
+    changeState("topMenuId", e.key);
+    const topMenuId = getGlobalStates("topMenuId");
+    console.log(topMenuId)
+  };
+
   getMenu = () => {
     http("/menu/top").then((res) => {
       console.log(res);
       this.setState({ topMenu: res.data.data });
-    });
+    }); 
   };
 
   render() {
     const data = getJson("header");
+    const topMenuId = getGlobalStates("topMenuId");
+    console.log(topMenuId)
     const { topMenu } = this.state;
     return (
       <header className={"App-header"}>
@@ -45,7 +58,7 @@ export default class Header extends Component {
           <Menu theme="dark" onClick={this.handleClick} mode="horizontal">
             {topMenu.map((item, key) => {
               return (
-                <Menu.Item key={key}>
+                <Menu.Item key={item.menu_id}>
                   <Icon type={item.icon} />
                   <Link className="topMenu" to={item.url}>
                     {item.title}

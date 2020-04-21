@@ -11,6 +11,7 @@ import { Icon, Menu, Button } from "antd";
 import { getJson } from "../util/jsonService";
 import "../css/common.less";
 import { http } from "../util/httpService";
+import { getGlobalStates } from "@masx200/react-simple-global-state-store-hook";
 const { SubMenu } = Menu;
 
 class LeftMenu extends Component {
@@ -22,7 +23,12 @@ class LeftMenu extends Component {
     };
   }
 
+  componentWillReceiveProps(e,x){
+    console.log(e,x)
+  }
+
   toggleCollapsed = (e) => {
+    console.log(this)
     const { collapsed } = this.state;
     this.setState({
       collapsed: !collapsed,
@@ -30,9 +36,10 @@ class LeftMenu extends Component {
   };
 
   componentDidMount() {
-    http('/menu/left').then(res=>{
-      console.log(res.data.data)
-      this.setState({menu:res.data})
+    console.log(this)
+    const topMenuId = getGlobalStates('topMenuId');
+    http('/menu/left',topMenuId).then(res=>{
+      console.log(res)
     })
   }
 
@@ -45,7 +52,7 @@ class LeftMenu extends Component {
     
     return (
       (
-        false&&<div className="left-content">
+        <div className="left-content">
           <Button
             type="primary"
             className={"btn-change"}
